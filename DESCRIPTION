@@ -1,12 +1,15 @@
 Package: ExamplePackage
-Title: What the Package Does (One Line, Title Case)
+Title: Two-by-two contingency table standardization
 Version: 0.0.0.9000
 Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
+    person("Phil", "Lombardo", , "philip.j.lombardo@gmail.com", 
+           role = c("aut", "cre"),
+           comment = c(ORCID = "0009-0005-0846-0073"))
+Description: This package takes a dataframe of three categorical variables with 
+    two levels each and computes a standardized rates for an identified response 
+    variable based on provided explanatory and confounding variables, as well as 
+    a provided "mixture" for the two levels of the confounding variable.
+License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3

@@ -25,11 +25,14 @@ standardize_table<-function(df,
     unstd_rates<-diag(all_rates%*%t(conf_table))
     std_rates<-diag(all_rates %*% t(mix_table))
 
-    print(cbind(all_rates[,1],conf_table[,1],
+    return_un<-cbind(all_rates[,1],conf_table[,1],
                 all_rates[,2],conf_table[,2],
-                unstd_rates))
-    print(cbind(all_rates[,1],mix_table[,1],
+                unstd_rates)
+    return_st<-cbind(all_rates[,1],mix_table[,1],
                 all_rates[,2],mix_table[,2],
-                std_rates))
+                std_rates)
+
+    list(unstd = return_un,
+         std = return_st)
 
 }
