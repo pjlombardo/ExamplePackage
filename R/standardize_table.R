@@ -1,3 +1,27 @@
+#' Rate comparison after adjusting for a confounder
+#'
+#' @param df A dataframe with three categorical variables (chr or factor)
+#' @param response character vector indicating the name of the response variable
+#' @param explanatory character vector indicating the name of the explanatory variable
+#' @param confounder character vector indicating the name of the confounding variable
+#' @param mix a two-entry numerical vector representing the percentages of each level of the confounder used for standardization
+#'
+#' @return a list with entries "unstd" for the unstandardized table, and "std" for the standardized table using the weights from `mix`
+#' @export
+#'
+#' @examples
+#' whickham<-read.table("https://s3.amazonaws.com/pbreheny-data-sets/whickham.txt",
+#'     sep = "\t",header=TRUE)
+#' whickham$over65 <- ifelse(whickham$Age=="65-","Yes","No")
+#' table1<-standardize_table(
+#'     df = whickham,
+#'     response = "Survival",
+#'     explanatory = "Smoking",
+#'     confounder = "over65",
+#'     mix = c(.7, .3)
+#' )
+#' table1$unstd
+#' table1$std
 standardize_table<-function(df,
                             response,
                             explanatory,
